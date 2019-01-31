@@ -8,7 +8,16 @@ module.exports = async (phrase) => {
         }
     })
 
-    return JSON.stringify(results.data);
+    var bookResults = {
+        data: results.data,
+        status: results.status,
+        statusText: results.statusText,
+        headers: results.headers,
+        requestHeader: results.requestHeader
+    };
+
+
+    return JSON.stringify(bookResults.data);
 }
 
 /*  console.log(results.data);
