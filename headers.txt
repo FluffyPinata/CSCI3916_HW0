@@ -1,0 +1,55 @@
+Expires ?Mon, 04 Feb 2019 03:08:02 GMT
+
+The date and time the response is considered stale.
+
+Date ?Mon, 04 Feb 2019 03:08:02 GMT
+
+The date and time the request was sent.
+
+Cache-Control ?private, max-age=0, must-revalidate, no-transform
+
+Gives the parameters for how and if the object can be cached. Private means that it can only be used by a single user and can't be stored by another cache.
+max-age=0 specifies that the request will be considered fresh for 1 second. must-revalidate specifies that the cache should only use the resources if they aren't stale.
+no-transforms specifies that no transforms or conversions can be made to the resource.
+
+ETag ?"IUREzboS_XZycecz4xfru1ipYfo/QzqPJJTdSZGEl1ZyBZXSGQUa_2Y"
+
+ETag returns the version of the resource being used, usually in a digest.
+
+Vary ?Origin
+Vary ?X-Origin
+
+The vary header simply specifies where to retrieve data from if it hasn't already been cached. In this case, it's told just to recache from the origin.
+
+Content-Type ?application/json; charset=UTF-8
+
+Content type specifies what the media type of the resource is. In this case, it's a json application, using the UTF-8 characters.
+
+Content-Encoding ?gzip
+
+Specifies how the media type will be compressed. In this case it's through a gzip (originally a UNIX gzip program).
+
+X-Content-Type-Options ?nosniff
+
+Stops the MIME types from the content type headers from being changed in anyway. Also specifies that they must always be followed. 
+Nosniff specifically blocks style requests that don't have text/css types and blocks script requests without JavaScript MIME types.
+
+X-Frame-Options ?SAMEORIGIN
+
+Specifies which frame the page is to be viewed in. In this case, it's only allowed to use a frame that's on the same origin of the actual page itself.
+
+X-XSS-Protection ?1; mode=block
+
+Stops the page from loading when it detects a cross site scripting attack. Will prevent the rendering of the page if it detects an attack.
+
+Server ?GSE
+
+Specifies that GSE is the software that will handle the requests.
+
+Alt-Svc ?quic=":443"; ma=2592000; v="44,43,39"
+
+Lists an alternate method of the reaching the website, in this case it's through another port.
+
+Transfer-Encoding ?chunked
+
+Specifies that data be sent in multiple chunks to transfer data to the user.
